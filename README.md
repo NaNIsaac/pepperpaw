@@ -7,6 +7,25 @@ a to-do list. The alias `ppw` is installed too. It needs `courier serve` running
 
 ## Install
 
+One line, nothing needed beforehand: the script installs [uv](https://docs.astral.sh/uv/) if it is
+missing, and uv fetches a Python. Windows (cmd or PowerShell):
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm -useb https://raw.githubusercontent.com/NaNIsaac/pepperpaw/main/install.ps1 | iex"
+```
+
+macOS and Linux:
+
+```sh
+curl -LsSf https://raw.githubusercontent.com/NaNIsaac/pepperpaw/main/install.sh | sh
+```
+
+It runs `uv tool install pepperpaw` and puts uv's command folder on `PATH` for new terminals.
+The package is the main branch as a source archive, so git is not needed.
+Run the same line again to update.
+
+With uv and git installed, the same by hand:
+
 <!-- test -->
 ```sh
 uv tool install git+https://github.com/NaNIsaac/pepperpaw
