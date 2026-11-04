@@ -1,0 +1,26 @@
+[project]
+name = "pepperpaw"
+version = "0.1.0"
+description = "Send a message to a recipient agent and answer a numbered question from the terminal."
+requires-python = ">=3.13"
+dependencies = ["herdr-courier"]
+
+[project.scripts]
+pepperpaw = "pepperpaw.cli:main"
+ppw = "pepperpaw.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11,<0.13"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv.sources]
+herdr-courier = { git = "https://github.com/NaNIsaac/herdr-courier", rev = "9e115a53384e5c9770f6b559d55ee6ac00996a66" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
